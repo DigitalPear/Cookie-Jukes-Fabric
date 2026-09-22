@@ -1,0 +1,15 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "resin_cookie"
+      ]
+    }
+  ],
+  "type": "cookiejukes:disc_duplication",
+  "cookie": "resin_cookie:resin_cookie",
+  "result": {
+    "id": "cookiejukes:resin_cookie_disc"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "cookiejukes",
+  "version": "${version}",
+  "name": "Cookie Jukes",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "Apache-2.0",
+  "icon": "assets/cookiejukes/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.digitalpear.cookiejukes.client.CookiejukesDataGenerator"
+    ],
+    "client": [
+      "org.digitalpear.cookiejukes.client.CookiejukesClient"
+    ],
+    "main": [
+      "org.digitalpear.cookiejukes.Cookiejukes"
+    ]
+  },
+  "accessWidener": "cookiejukes.classtweaker",
+  "mixins": [
+    "cookiejukes.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

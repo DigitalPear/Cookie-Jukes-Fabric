@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.digitalpear.cookiejukes.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "CraftingRemainderMixin",
+    "JukeboxBlockEntityMixin",
+    "JukeboxPlayableMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

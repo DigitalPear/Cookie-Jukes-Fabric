@@ -1,0 +1,7 @@
+{
+  "type": "cookiejukes:disc_duplication",
+  "cookie": "minecraft:cookie",
+  "result": {
+    "id": "cookiejukes:cookie_disc"
+  }
+}

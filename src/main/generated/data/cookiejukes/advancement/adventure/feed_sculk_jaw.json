@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:adventure/kill_a_mob",
+  "criteria": {
+    "use_sculk_jaw": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "biomes": "minecraft:deep_dark",
+              "block": {
+                "blocks": "cookiejukes:sculk_jaw"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#c:foods/cookie"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.adventure.get_cookie_disc.description"
+    },
+    "icon": {
+      "id": "cookiejukes:cookie_disc"
+    },
+    "title": {
+      "translate": "advancements.adventure.get_cookie_disc.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_sculk_jaw"
+    ]
+  ],
+  "rewards": {
+    "experience": 12
+  },
+  "sends_telemetry_event": true
+}

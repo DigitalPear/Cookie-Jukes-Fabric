@@ -1,0 +1,10 @@
+{
+  "advancements.adventure.get_cookie_disc.description": "Feed a Sculk Jaw a cookie in the Deep Dark.",
+  "advancements.adventure.get_cookie_disc.title": "How the Cookie Crumbles",
+  "block.cookiejukes.sculk_jaw": "Sculk Jaw",
+  "item.cookiejukes.cookie_disc": "Cookie Disc",
+  "item.cookiejukes.honey_cookie_disc": "Honey Cookie Disc",
+  "item.cookiejukes.pufferfish_mace": "Pufferfish Mace",
+  "item.cookiejukes.resin_cookie_disc": "Resin Cookie Disc",
+  "item.cookiejukes.sweet_berry_cookie_disc": "Sweet Berry Cookie Disc"
+}

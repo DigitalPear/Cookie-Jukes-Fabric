@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "has_record=false": {
+      "model": "cookiejukes:block/sculk_jaw"
+    },
+    "has_record=true": {
+      "model": "cookiejukes:block/sculk_jaw_playing"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:mace",
+    "minecraft:pufferfish"
+  ],
+  "result": {
+    "id": "cookiejukes:pufferfish_mace"
+  }
+}
