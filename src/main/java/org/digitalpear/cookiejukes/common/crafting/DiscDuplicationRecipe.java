@@ -3,19 +3,29 @@ package org.digitalpear.cookiejukes.common.crafting;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.display.ShapedCraftingRecipeDisplay;
+import net.minecraft.world.item.crafting.display.SlotDisplay;
+import net.minecraft.world.item.crafting.display.SlotDisplays;
 import net.minecraft.world.level.Level;
+import org.digitalpear.cookiejukes.init.CJItems;
 import org.digitalpear.cookiejukes.init.data.CJItemTags;
 import org.joml.Vector2i;
 import org.jspecify.annotations.NonNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -81,6 +91,26 @@ public class DiscDuplicationRecipe extends CustomRecipe {
             }
         }
         return result;
+    }
+
+
+    public static List<SlotDisplay> getRecipes() {
+        List<SlotDisplay> recipes = new ArrayList<>();
+        List<Holder<Item>> items = new ArrayList<>();
+        BuiltInRegistries.ITEM.getTagOrEmpty(CJItemTags.DUPLICATABLE_DISCS).forEach(items::add);
+
+        ItemStack stack = CJItems.COOKIE_DISC.getDefaultInstance();
+        recipes.set(0, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(1, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(2, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(3, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(4, new SlotDisplay.TagSlotDisplay(HolderSet.direct(items)));
+        recipes.set(5, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(6, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(7, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(8, new SlotDisplay.ItemSlotDisplay(Items.COOKIE));
+        recipes.set(9, new SlotDisplay.ItemStackSlotDisplay(ItemStackTemplate.fromStack(stack)));
+        return recipes;
     }
 
     @Override

@@ -3,6 +3,9 @@ package org.digitalpear.cookiejukes.init;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.references.BlockItemId;
+import net.minecraft.references.ItemIds;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -19,15 +22,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CJItems {
-
+    public static class Ids {
+        private static ResourceKey<Item> create(final String name) {
+            return ResourceKey.create(Registries.ITEM, Cookiejukes.id(name));
+        }
+        public static final ResourceKey<Item> COOKIE_DISC = create("cookie_disc");
+        public static final ResourceKey<Item> SWEET_BERRY_COOKIE_DISC = create("sweet_berry_cookie_disc");
+        public static final ResourceKey<Item> HONEY_COOKIE_DISC = create("honey_cookie_disc");
+        public static final ResourceKey<Item> RESIN_COOKIE_DISC = create("resin_cookie_disc");
+        public static final ResourceKey<Item> PUFFERFISH_MACE = create("pufferfish_mace");
+    }
     static Consumable FAST_FOOD = Consumables.defaultFood().consumeSeconds(0.8F).build();
 
-    public static final Item COOKIE_DISC = registerCookie("cookie_disc");
-    public static final Item SWEET_BERRY_COOKIE_DISC = registerCookie("sweet_berry_cookie_disc", FAST_FOOD);
-    public static final Item HONEY_COOKIE_DISC = registerCookie("honey_cookie_disc", FAST_FOOD);
-    public static final Item RESIN_COOKIE_DISC = registerCookie("resin_cookie_disc");
+    public static final Item COOKIE_DISC = registerCookie(Ids.COOKIE_DISC);
+    public static final Item SWEET_BERRY_COOKIE_DISC = registerCookie(Ids.SWEET_BERRY_COOKIE_DISC, FAST_FOOD);
+    public static final Item HONEY_COOKIE_DISC = registerCookie(Ids.HONEY_COOKIE_DISC, FAST_FOOD);
+    public static final Item RESIN_COOKIE_DISC = registerCookie(Ids.RESIN_COOKIE_DISC);
 
-    public static final Item PUFFERFISH_MACE = registerItem("pufferfish_mace",
+    public static final Item PUFFERFISH_MACE = registerItem(Ids.PUFFERFISH_MACE,
             new MobEffectInstance(MobEffects.POISON, 20 * 4, 3), new Item.Properties()
             .rarity(Rarity.EPIC)
             .durability(500)
@@ -36,13 +48,13 @@ public class CJItems {
             .enchantable(15)
             .component(DataComponents.WEAPON, new Weapon(1)));
 
-    private static Item registerItem(String name, MobEffectInstance effect, Item.Properties properties) {
-        return Items.registerItem(ResourceKey.create(Registries.ITEM, Cookiejukes.id(name)), p -> new SingleUseMaceItem(effect, p), properties);
+    private static Item registerItem(ResourceKey<Item> id, MobEffectInstance effect, Item.Properties properties) {
+        return Items.registerItem(id, p -> new SingleUseMaceItem(effect, p), properties);
     }
-    private static Item registerCookie(String name, Consumable consumable) {
-        return Items.registerItem(ResourceKey.create(Registries.ITEM, Cookiejukes.id(name)), new Item.Properties().food(Foods.COOKIE, consumable));
+    private static Item registerCookie(ResourceKey<Item> id, Consumable consumable) {
+        return Items.registerItem(id, new Item.Properties().food(Foods.COOKIE, consumable));
     }
-    private static Item registerCookie(String name) {
+    private static Item registerCookie(ResourceKey<Item> name) {
         return registerCookie(name, Consumables.DEFAULT_FOOD);
     }
 

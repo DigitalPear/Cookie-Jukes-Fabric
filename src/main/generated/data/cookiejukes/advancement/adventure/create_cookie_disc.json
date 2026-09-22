@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:adventure/kill_a_mob",
+  "criteria": {
+    "make_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cookiejukes:cookie_disc"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.adventure.create_cookie_disc.description"
+    },
+    "icon": {
+      "id": "cookiejukes:cookie_disc"
+    },
+    "title": {
+      "translate": "advancements.adventure.create_cookie_disc.title"
+    }
+  },
+  "requirements": [
+    [
+      "make_cookie"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

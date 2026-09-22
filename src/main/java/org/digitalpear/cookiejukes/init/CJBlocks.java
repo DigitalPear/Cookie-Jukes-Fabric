@@ -3,7 +3,6 @@ package org.digitalpear.cookiejukes.init;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityType;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

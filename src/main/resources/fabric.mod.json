@@ -16,6 +16,9 @@
     "client": [
       "org.digitalpear.cookiejukes.client.CookiejukesClient"
     ],
+    "jei_mod_plugin": [
+      "org.digitalpear.cookiejukes.jei.CookieJukesJEIPlugin"
+    ],
     "main": [
       "org.digitalpear.cookiejukes.Cookiejukes"
     ]
@@ -24,6 +27,7 @@
   "mixins": [
     "cookiejukes.mixins.json"
   ],
+
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",

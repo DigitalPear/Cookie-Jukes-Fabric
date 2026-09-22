@@ -24,20 +24,16 @@ public class CJItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(CJItemTags.COOKIE_DISCS)
-                .add(getId(CJItems.RESIN_COOKIE_DISC))
-                .add(getId(CJItems.COOKIE_DISC))
-                .add(getId(CJItems.HONEY_COOKIE_DISC))
-                .add(getId(CJItems.SWEET_BERRY_COOKIE_DISC))
+                .add(CJItems.Ids.COOKIE_DISC)
+                .add(CJItems.Ids.HONEY_COOKIE_DISC)
+                .add(CJItems.Ids.SWEET_BERRY_COOKIE_DISC)
+                .add(CJItems.Ids.RESIN_COOKIE_DISC)
         ;
         tag(CJItemTags.DUPLICATABLE_DISCS).forceAddTag(ConventionalItemTags.MUSIC_DISCS);
         tag(CJItemTags.SCULK_JAW_FOOD).addTag(ConventionalItemTags.COOKIE_FOODS);
         tag(ItemTags.PARROT_POISONOUS_FOOD).addTag(CJItemTags.COOKIE_DISCS);
 
         tag(ConventionalItemTags.COOKIE_FOODS).addTag(CJItemTags.COOKIE_DISCS);
-        tag(ConventionalItemTags.MACE_TOOLS).add(getId(CJItems.PUFFERFISH_MACE));
-    }
-
-    public ResourceKey<Item> getId(Item item) {
-        return ResourceKey.create(Registries.ITEM, BuiltInRegistries.ITEM.getKey(item));
+        tag(ConventionalItemTags.MACE_TOOLS).add(CJItems.Ids.PUFFERFISH_MACE);
     }
 }

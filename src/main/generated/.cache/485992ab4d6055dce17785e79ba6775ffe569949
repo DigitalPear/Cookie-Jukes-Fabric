@@ -1,7 +1,7 @@
 // 26.3	-999999999-01-01T00:00:00	Cookie Jukes/Tags for minecraft:item
 28807cf8febdfcef8d8c6f7144ecc4b8aecd55ec data/c/tags/item/foods/cookie.json
 609f905a1be1f4732b3cebc2b35e48ab4461b30a data/c/tags/item/tools/mace.json
-a5281f4c65420b8e87d858765874354a9117a2e0 data/cookiejukes/tags/item/cookie_discs.json
+3e9fce1d1a628872ac600886c6f9c37e5b64baa0 data/cookiejukes/tags/item/cookie_discs.json
 6d314daeebb1e45423e0dc40664215ac66c2152e data/cookiejukes/tags/item/duplicatable_discs.json
 f08ebfa8ff4f975747dfcc287b3f47bad7130cfe data/cookiejukes/tags/item/sculk_jaw_food.json
 28807cf8febdfcef8d8c6f7144ecc4b8aecd55ec data/minecraft/tags/item/parrot_poisonous_food.json
