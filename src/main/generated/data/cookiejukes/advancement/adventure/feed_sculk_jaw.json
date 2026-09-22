@@ -3,23 +3,26 @@
   "criteria": {
     "use_sculk_jaw": {
       "conditions": {
-        "location": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "biomes": "minecraft:deep_dark",
-              "block": {
-                "blocks": "cookiejukes:sculk_jaw"
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "biomes": "minecraft:deep_dark",
+                "block": {
+                  "blocks": "cookiejukes:sculk_jaw"
+                }
+              }
+            },
+            {
+              "type": "minecraft:match_tool",
+              "predicate": {
+                "items": "#c:foods/cookie"
               }
             }
-          },
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "items": "#c:foods/cookie"
-            }
-          }
-        ]
+          ]
+        }
       },
       "trigger": "minecraft:item_used_on_block"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "cookiejukes:pufferfish_mace"
+        "recipes": "cookiejukes:pufferfish_mace"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
