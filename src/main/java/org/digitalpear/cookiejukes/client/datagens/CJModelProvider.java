@@ -29,13 +29,25 @@ public class CJModelProvider extends FabricModelProvider {
     }
     private void createSculkJaws(BlockModelGenerators blockModelGenerators) {
         Block block = CJBlocks.SCULK_JAW;
-        Block bottomBlockTextureSource = Blocks.SCULK_CATALYST;
-        Material bottomTexture = TextureMapping.getBlockTexture(bottomBlockTextureSource, "_bottom");
-        TextureMapping defaultTextureMap = new TextureMapping().put(TextureSlot.BOTTOM, bottomTexture).put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top")).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side"));
-        TextureMapping bloomTextureMap = new TextureMapping().put(TextureSlot.BOTTOM, bottomTexture).put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top_playing")).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side_bloom"));
-        Identifier defaultModel = ModelTemplates.CUBE_BOTTOM_TOP.create(block, defaultTextureMap, blockModelGenerators.modelOutput);
+        TextureMapping defaultTextureMap = new TextureMapping()
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_top"))
+                .put(TextureSlot.DOWN, TextureMapping.getBlockTexture(block, "_bottom"))
+                .put(TextureSlot.UP, TextureMapping.getBlockTexture(block, "_top"))
+                .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(block, "_side"))
+                .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(block, "_side"))
+                .put(TextureSlot.EAST, TextureMapping.getBlockTexture(block, "_east"))
+                .put(TextureSlot.WEST, TextureMapping.getBlockTexture(block, "_west"))
+                ;
+        TextureMapping bloomTextureMap = defaultTextureMap
+                .copyAndUpdate(TextureSlot.UP, TextureMapping.getBlockTexture(block, "_top_open"))
+                .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(block, "_north_open"))
+                .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(block, "_south_open"))
+                .put(TextureSlot.EAST, TextureMapping.getBlockTexture(block, "_east_open"))
+                .put(TextureSlot.WEST, TextureMapping.getBlockTexture(block, "_west_open"))
+                ;
+        Identifier defaultModel = ModelTemplates.CUBE.create(block, defaultTextureMap, blockModelGenerators.modelOutput);
         MultiVariant defaultVariant = BlockModelGenerators.plainVariant(defaultModel);
-        MultiVariant bloom = BlockModelGenerators.plainVariant(ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(block, "_playing", bloomTextureMap, blockModelGenerators.modelOutput));
+        MultiVariant bloom = BlockModelGenerators.plainVariant(ModelTemplates.CUBE.createWithSuffix(block, "_open", bloomTextureMap, blockModelGenerators.modelOutput));
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(JukeboxBlock.HAS_RECORD).generate((pulse) -> pulse ? bloom : defaultVariant)));
         blockModelGenerators.registerSimpleItemModel(block, defaultModel);
     }

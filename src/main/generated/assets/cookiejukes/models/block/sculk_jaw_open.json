@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "cookiejukes:block/sculk_jaw_bottom",
+    "east": "cookiejukes:block/sculk_jaw_east_open",
+    "north": "cookiejukes:block/sculk_jaw_north_open",
+    "particle": "cookiejukes:block/sculk_jaw_top",
+    "south": "cookiejukes:block/sculk_jaw_south_open",
+    "up": "cookiejukes:block/sculk_jaw_top_open",
+    "west": "cookiejukes:block/sculk_jaw_west_open"
+  }
+}

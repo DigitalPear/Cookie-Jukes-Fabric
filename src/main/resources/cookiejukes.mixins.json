@@ -6,7 +6,8 @@
   "mixins": [
     "CraftingRemainderMixin",
     "JukeboxBlockEntityMixin",
-    "JukeboxPlayableMixin"
+    "JukeboxPlayableMixin",
+    "SculkSpreadMixin"
   ],
   "client": [
   ],

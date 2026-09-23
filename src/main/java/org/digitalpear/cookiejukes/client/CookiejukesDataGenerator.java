@@ -15,6 +15,7 @@ public class CookiejukesDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(CJModelProvider::new);
         pack.addProvider(CJLanguageProvider::new);
         pack.addProvider(CJAdvancementProvider::new);
+        pack.addProvider(CJBlockLootProvider::new);
 
         pack.addProvider(CJBlockTagProvider::new);
         pack.addProvider(CJItemTagProvider::new);

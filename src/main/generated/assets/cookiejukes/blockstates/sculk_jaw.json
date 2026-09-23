@@ -4,7 +4,7 @@
       "model": "cookiejukes:block/sculk_jaw"
     },
     "has_record=true": {
-      "model": "cookiejukes:block/sculk_jaw_playing"
+      "model": "cookiejukes:block/sculk_jaw_open"
     }
   }
 }

@@ -4,7 +4,10 @@
   "version": "${version}",
   "name": "Cookie Jukes",
   "description": "",
-  "authors": [],
+  "authors": [
+    "DigitalPear",
+    "Mongocat"
+  ],
   "contact": {},
   "license": "Apache-2.0",
   "icon": "assets/cookiejukes/icon.png",
