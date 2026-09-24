@@ -39,7 +39,7 @@ public class CJAdvancementProvider extends FabricAdvancementProvider {
         HolderLookup<Item> items = registries.lookupOrThrow(Registries.ITEM);
         AdvancementHolder makeCookieDisc = Advancement.Builder.advancement()
                 .parent(Identifier.withDefaultNamespace("adventure/kill_a_mob"))
-                .display(new DisplayInfo(new ItemStackTemplate(CJItems.COOKIE_DISC.asItem()),
+                .display(new DisplayInfo(new ItemStackTemplate(CJItems.COOKIE_DISC),
                         Component.translatable("advancements.adventure.create_cookie_disc.title"),
                         Component.translatable("advancements.adventure.create_cookie_disc.description"),
                         Optional.empty(),
@@ -52,7 +52,7 @@ public class CJAdvancementProvider extends FabricAdvancementProvider {
         AdvancementHolder feedJawCookie = Advancement.Builder.advancement()
                 .parent(makeCookieDisc)
                 .addCriterion("use_sculk_jaw", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(blocks, CJBlocks.SCULK_JAW)).setBiomes(HolderSet.direct(registries.lookupOrThrow(Registries.BIOME).getOrThrow(Biomes.DEEP_DARK))), ItemPredicate.Builder.item().of(items, ConventionalItemTags.COOKIE_FOODS)))
-                .display(new DisplayInfo(new ItemStackTemplate(CJItems.COOKIE_DISC.asItem()),
+                .display(new DisplayInfo(new ItemStackTemplate(CJBlocks.SCULK_JAW.asItem()),
                         Component.translatable("advancements.adventure.get_cookie_disc.title"),
                         Component.translatable("advancements.adventure.get_cookie_disc.description"),
                         Optional.empty(),

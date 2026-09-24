@@ -33,7 +33,7 @@
     },
     "frame": "goal",
     "icon": {
-      "id": "cookiejukes:cookie_disc"
+      "id": "cookiejukes:sculk_jaw"
     },
     "title": {
       "translate": "advancements.adventure.get_cookie_disc.title"
