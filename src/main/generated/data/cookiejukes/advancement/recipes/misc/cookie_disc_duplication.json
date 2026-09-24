@@ -1,19 +1,11 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "farmersdelight"
-      ]
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sweet_berry_cookie": {
+    "has_cookie": {
       "conditions": {
         "items": [
           {
-            "items": "farmersdelight:sweet_berry_cookie"
+            "items": "minecraft:cookie"
           }
         ]
       },
@@ -21,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "cookiejukes:sweet_berry_cookie_disc"
+        "recipes": "cookiejukes:cookie_disc_duplication"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sweet_berry_cookie"
+      "has_cookie"
     ]
   ],
   "rewards": {
     "recipes": [
-      "cookiejukes:sweet_berry_cookie_disc"
+      "cookiejukes:cookie_disc_duplication"
     ]
   }
 }

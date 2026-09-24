@@ -66,10 +66,12 @@ dependencies {
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
     //Farmer's Delight
-//    runtimeOnly("maven.modrinth:farmers-delight-refabricated:BD1gWJYb")
+    compileOnly "maven.modrinth:farmers-delight-refabricated:hTNvMewX"
+    runtimeOnly "maven.modrinth:farmers-delight-refabricated:hTNvMewX"
 
     //Resin Cookie
-//    runtimeOnly "maven.modrinth:resin-cookie:MIHWCkQC"
+    compileOnly "maven.modrinth:resin-cookie:dHz0NuSj"
+    runtimeOnly "maven.modrinth:resin-cookie:dHz0NuSj"
 
     //Reliable Recipe Viewer
     //runtimeOnly "cc.cassian.rrv:reliable-recipe-viewer-fabric:${rrv_version}+${minecraft_version}"

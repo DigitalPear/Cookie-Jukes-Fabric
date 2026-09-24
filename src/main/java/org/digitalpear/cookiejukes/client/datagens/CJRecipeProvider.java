@@ -15,6 +15,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import org.digitalpear.cookiejukes.common.crafting.DiscDuplicationRecipe;
 import org.digitalpear.cookiejukes.init.CJItems;
+import org.digitalpear.cookiejukes.init.data.CompatChecks;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -34,8 +36,10 @@ public class CJRecipeProvider extends FabricRecipeProvider {
             @Override
             public void buildRecipes() {
                 blanKCookie(Items.COOKIE, CJItems.COOKIE_DISC);
-//                blanKCookie(ModItems.SWEET_BERRY_COOKIE.get(), CJItems.SWEET_BERRY_COOKIE_DISC, new AllModsLoadedResourceCondition(List.of(CompatChecks.FD_ID)));
-//                blanKCookie(ModItems.HONEY_COOKIE.get(), CJItems.HONEY_COOKIE_DISC, new AllModsLoadedResourceCondition(List.of(CompatChecks.FD_ID)));
+                blanKCookie(ModItems.SWEET_BERRY_COOKIE.get(), CJItems.SWEET_BERRY_COOKIE_DISC, new AllModsLoadedResourceCondition(List.of(CompatChecks.FD_ID)));
+                blanKCookie(ModItems.HONEY_COOKIE.get(), CJItems.HONEY_COOKIE_DISC, new AllModsLoadedResourceCondition(List.of(CompatChecks.FD_ID)));
+
+                blanKCookie(net.emeraldx392.item.ModItems.RESIN_COOKIE, CJItems.RESIN_COOKIE_DISC, new AllModsLoadedResourceCondition(List.of("resin_cookie")));
 
                 shapeless(RecipeCategory.COMBAT, CJItems.PUFFERFISH_MACE).requires(Items.MACE).requires(Items.PUFFERFISH)
                         .unlockedBy(getHasName(Items.MACE),has(Items.MACE))
@@ -49,7 +53,9 @@ public class CJRecipeProvider extends FabricRecipeProvider {
                         .define('C', cookie)
                         .unlockedBy(getHasName(cookie), has(cookie))
                         .save(conditions.length > 0 ? withConditions(output, conditions) : output);
-                SpecialRecipeBuilder.special(() -> DiscDuplicationRecipe.create(Ingredient.of(cookie), new ItemStackTemplate(disc))).save(conditions.length > 0 ? withConditions(output, conditions) : output, BuiltInRegistries.ITEM.getKey(disc) + "_duplication");
+                SpecialRecipeBuilder.special(() -> DiscDuplicationRecipe.create(Ingredient.of(cookie), new ItemStackTemplate(disc)))
+                        .unlockedBy(getHasName(cookie), has(cookie))
+                        .save(conditions.length > 0 ? withConditions(output, conditions) : output, BuiltInRegistries.ITEM.getKey(disc) + "_duplication");
             }
         };
     }

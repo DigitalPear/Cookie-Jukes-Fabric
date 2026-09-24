@@ -1,6 +1,8 @@
 package org.digitalpear.cookiejukes.init;
 
+import net.emeraldx392.item.ModItems;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -11,6 +13,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.Weapon;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import org.digitalpear.cookiejukes.Cookiejukes;
 import org.digitalpear.cookiejukes.common.items.SingleUseMaceItem;
 import org.digitalpear.cookiejukes.init.data.CompatChecks;
@@ -49,7 +52,7 @@ public class CJItems {
         return Items.registerItem(id, p -> new SingleUseMaceItem(effect, p), properties);
     }
     private static Item registerCookie(ResourceKey<Item> id, Consumable consumable) {
-        return Items.registerItem(id, new Item.Properties().food(Foods.COOKIE, consumable));
+        return Items.registerItem(id, new Item.Properties().food(Foods.COOKIE, consumable).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH));
     }
     private static Item registerCookie(ResourceKey<Item> name) {
         return registerCookie(name, Consumables.DEFAULT_FOOD);

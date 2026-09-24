@@ -63,9 +63,9 @@ public class SculkJawBlock extends JukeboxBlock implements SculkBehaviour {
             playEatEffects(player, itemStack.getItem(), level, pos);
         } else if ((itemStack.is(CJItemTags.SCULK_JAW_FOOD)) && !state.getValue(HAS_RECORD)) {
             playEatEffects(player, itemStack.getItem(), level, pos);
-            if (!player.isCreative()) {
-                itemStack.shrink(1);
-            }
+//            if (!player.isCreative()) {
+//                itemStack.shrink(1);
+//            }
             return InteractionResult.SUCCESS;
         }
         return result;

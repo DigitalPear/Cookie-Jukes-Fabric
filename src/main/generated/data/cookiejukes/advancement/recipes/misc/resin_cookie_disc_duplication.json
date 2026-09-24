@@ -3,17 +3,17 @@
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
-        "farmersdelight"
+        "resin_cookie"
       ]
     }
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_honey_cookie": {
+    "has_resin_cookie": {
       "conditions": {
         "items": [
           {
-            "items": "farmersdelight:honey_cookie"
+            "items": "resin_cookie:resin_cookie"
           }
         ]
       },
@@ -21,7 +21,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "cookiejukes:honey_cookie_disc"
+        "recipes": "cookiejukes:resin_cookie_disc_duplication"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,12 +29,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_honey_cookie"
+      "has_resin_cookie"
     ]
   ],
   "rewards": {
     "recipes": [
-      "cookiejukes:honey_cookie_disc"
+      "cookiejukes:resin_cookie_disc_duplication"
     ]
   }
 }

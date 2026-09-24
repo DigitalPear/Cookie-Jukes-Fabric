@@ -1,0 +1,40 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "resin_cookie"
+      ]
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_resin_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "resin_cookie:resin_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "cookiejukes:resin_cookie_disc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_resin_cookie"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cookiejukes:resin_cookie_disc"
+    ]
+  }
+}
