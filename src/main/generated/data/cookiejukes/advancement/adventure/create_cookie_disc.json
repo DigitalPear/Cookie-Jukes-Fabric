@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "cookiejukes:cookie_disc"
+            "items": "#cookiejukes:cookie_discs"
           }
         ]
       },

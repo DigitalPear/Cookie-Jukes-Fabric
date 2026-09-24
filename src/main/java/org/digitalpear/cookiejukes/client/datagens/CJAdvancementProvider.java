@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.Block;
 import org.digitalpear.cookiejukes.Cookiejukes;
 import org.digitalpear.cookiejukes.init.CJBlocks;
 import org.digitalpear.cookiejukes.init.CJItems;
+import org.digitalpear.cookiejukes.init.data.CJItemTags;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +47,7 @@ public class CJAdvancementProvider extends FabricAdvancementProvider {
                         AdvancementType.TASK,
                         true, true, false
                 ))
-                .addCriterion("make_cookie", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(items, CJItems.COOKIE_DISC)))
+                .addCriterion("make_cookie", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(items, CJItemTags.COOKIE_DISCS)))
                 .save(consumer, Cookiejukes.id("adventure/create_cookie_disc"))
                 ;
         AdvancementHolder feedJawCookie = Advancement.Builder.advancement()

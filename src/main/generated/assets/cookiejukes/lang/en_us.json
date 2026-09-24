@@ -1,7 +1,7 @@
 {
   "advancements.adventure.create_cookie_disc.description": "Duplicate a music disc using cookies.",
   "advancements.adventure.create_cookie_disc.title": "Music to My Stomach",
-  "advancements.adventure.get_cookie_disc.description": "Feed a Sculk Jaw a cookie in the Deep Dark.",
+  "advancements.adventure.get_cookie_disc.description": "Feed a Cookie to a Sculk Jaw in the Deep Dark.",
   "advancements.adventure.get_cookie_disc.title": "How the Cookie Crumbles",
   "block.cookiejukes.sculk_jaw": "Sculk Jaw",
   "item.cookiejukes.cookie_disc": "Cookie Disc",

@@ -35,8 +35,8 @@ public class CJItems {
     static Consumable FAST_FOOD = Consumables.defaultFood().consumeSeconds(0.8F).build();
 
     public static final Item COOKIE_DISC = registerCookie(Ids.COOKIE_DISC);
-    public static final Item SWEET_BERRY_COOKIE_DISC = registerCookie(Ids.SWEET_BERRY_COOKIE_DISC, FAST_FOOD);
-    public static final Item HONEY_COOKIE_DISC = registerCookie(Ids.HONEY_COOKIE_DISC, FAST_FOOD);
+    public static final Item SWEET_BERRY_COOKIE_DISC = registerCookie(Ids.SWEET_BERRY_COOKIE_DISC);
+    public static final Item HONEY_COOKIE_DISC = registerCookie(Ids.HONEY_COOKIE_DISC);
     public static final Item RESIN_COOKIE_DISC = registerCookie(Ids.RESIN_COOKIE_DISC);
 
     public static final Item PUFFERFISH_MACE = registerMaceItem(Ids.PUFFERFISH_MACE,

@@ -22,7 +22,7 @@ public class CJLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(CJBlocks.SCULK_JAW, "Sculk Jaw");
         translationBuilder.add("advancements.adventure.get_cookie_disc.title", "How the Cookie Crumbles");
-        translationBuilder.add("advancements.adventure.get_cookie_disc.description", "Feed a Sculk Jaw a cookie in the Deep Dark.");
+        translationBuilder.add("advancements.adventure.get_cookie_disc.description", "Feed a Cookie to a Sculk Jaw in the Deep Dark.");
 
         translationBuilder.add("advancements.adventure.create_cookie_disc.title", "Music to My Stomach");
         translationBuilder.add("advancements.adventure.create_cookie_disc.description", "Duplicate a music disc using cookies.");
