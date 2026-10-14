@@ -1,8 +1,6 @@
 package org.digitalpear.cookiejukes.init;
 
-import net.emeraldx392.item.ModItems;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
-import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -13,6 +11,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.Weapon;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import org.digitalpear.cookiejukes.Cookiejukes;
 import org.digitalpear.cookiejukes.common.items.SingleUseMaceItem;
@@ -20,6 +19,7 @@ import org.digitalpear.cookiejukes.init.data.CompatChecks;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class CJItems {
     public static class Ids {
@@ -38,6 +38,9 @@ public class CJItems {
     public static final Item SWEET_BERRY_COOKIE_DISC = registerCookie(Ids.SWEET_BERRY_COOKIE_DISC);
     public static final Item HONEY_COOKIE_DISC = registerCookie(Ids.HONEY_COOKIE_DISC);
     public static final Item RESIN_COOKIE_DISC = registerCookie(Ids.RESIN_COOKIE_DISC);
+
+//    public static final Item SONGFLOWER = Items.registerBlock(CJBlocks.Ids.SONGFLOWER, CJBlocks.SONGFLOWER, new Item.Properties().compostable(ContextIntProviders.COMPOSTABLE_LOW));
+//    public static final Item SONGFLOWER_SEEDS = Items.registerItem(CJBlocks.Ids.SONGFLOWER_CROP.item(), Items.createBlockItemWithCustomItemName(CJBlocks.SONGFLOWER_CROP), new Item.Properties().compostable(ContextIntProviders.COMPOSTABLE_LOW));
 
     public static final Item PUFFERFISH_MACE = registerMaceItem(Ids.PUFFERFISH_MACE,
             new MobEffectInstance(MobEffects.POISON, 20 * 4, 3), new Item.Properties()
@@ -74,7 +77,6 @@ public class CJItems {
 
     public static void insertCookieInCreativeTab(Item cookie){
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(entries -> {
-
             entries.insertAfter(Items.COOKIE, new ItemStack(cookie));
         });
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {

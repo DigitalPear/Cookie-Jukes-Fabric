@@ -63,12 +63,19 @@ public class SculkJawBlock extends JukeboxBlock implements SculkBehaviour {
             playEatEffects(player, itemStack.getItem(), level, pos);
         } else if ((itemStack.is(CJItemTags.SCULK_JAW_FOOD)) && !state.getValue(HAS_RECORD)) {
             playEatEffects(player, itemStack.getItem(), level, pos);
-//            if (!player.isCreative()) {
-//                itemStack.shrink(1);
-//            }
+            level.setBlockAndUpdate(pos, state.setValue(HAS_RECORD, true));
+            level.scheduleTick(pos, this, 10);
             return InteractionResult.SUCCESS;
         }
         return result;
+    }
+
+    @Override
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        super.tick(state, level, pos, random);
+        if (level.getBlockEntity(pos) instanceof JukeboxBlockEntity jukebox && jukebox.getTheItem().isEmpty()) {
+            level.setBlockAndUpdate(pos, state.setValue(HAS_RECORD, false));
+        }
     }
 
     public void playEatEffects(@Nullable Player player, Item particleSource, Level level, BlockPos pos) {
@@ -88,6 +95,6 @@ public class SculkJawBlock extends JukeboxBlock implements SculkBehaviour {
 
     @Override
     public int attemptUseCharge(SculkSpreader.ChargeCursor cursor, LevelAccessor level, BlockPos originPos, RandomSource random, SculkSpreader spreader, boolean spreadVeins) {
-        return 0;
+        return 3;
     }
 }
