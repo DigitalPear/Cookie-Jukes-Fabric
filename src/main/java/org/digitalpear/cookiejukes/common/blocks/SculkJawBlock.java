@@ -14,7 +14,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.JukeboxBlock;
@@ -86,7 +85,8 @@ public class SculkJawBlock extends JukeboxBlock implements SculkBehaviour {
         level.playLocalSound(player, SoundEvents.GENERIC_EAT.value(), SoundSource.BLOCKS, 0.4f, 0.6f);
     }
 
-    protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
+    @Override
+    protected void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack tool, boolean dropExperience) {
         super.spawnAfterBreak(state, level, pos, tool, dropExperience);
         if (dropExperience) {
             this.tryDropExperience(level, pos, tool, this.xpRange);

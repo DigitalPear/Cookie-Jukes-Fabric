@@ -11,7 +11,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.Weapon;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import org.digitalpear.cookiejukes.Cookiejukes;
 import org.digitalpear.cookiejukes.common.items.SingleUseMaceItem;
@@ -19,7 +18,6 @@ import org.digitalpear.cookiejukes.init.data.CompatChecks;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public class CJItems {
     public static class Ids {
@@ -72,6 +70,9 @@ public class CJItems {
         insertCookieInCreativeTab(COOKIE_DISC);
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
             entries.insertAfter(Items.SCULK_CATALYST, CJBlocks.SCULK_JAW);
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(entries -> {
+            entries.insertAfter(Items.JUKEBOX, CJBlocks.SCULK_JAW);
         });
     }
 
